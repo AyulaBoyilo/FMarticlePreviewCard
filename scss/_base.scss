@@ -1,0 +1,46 @@
+@import "colors";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  background-color: $light-gray-blue;
+}
+
+body .card .foot-box .hidden {
+  display: none;
+}
+
+@mixin btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    position: relative;
+    bottom: 2px;
+    left: 1px;
+  }
+}
+
+.btn-share {
+  &-light {
+    @include btn;
+
+    background-color: $light-gray-blue;
+  }
+
+  &-dark {
+    @include btn;
+
+    background-color: $desat-dark-blue;
+  }
+}

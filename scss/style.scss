@@ -1,0 +1,239 @@
+@import "base";
+@import "colors";
+
+.card {
+  width: 87vw;
+  margin: 70px auto 50px auto;
+  border-radius: 10px;
+  background-color: #fff;
+  position: relative;
+  box-shadow: 0 5px 15px darken($color: $light-gray-blue, $amount: 7);
+
+  .bg-image {
+    width: 100%;
+    height: 210px;
+    background: url("../images/drawers.jpg") no-repeat top center / cover;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .content {
+    padding: 35px;
+
+    h2 {
+      font-size: 16px;
+      color: $very-dark-gray-blue;
+    }
+
+    p {
+      margin-top: 15px;
+      color: $gray-blue;
+    }
+  }
+
+  .foot-box {
+    padding: 0 35px 20px 35px;
+
+    .person {
+      display: flex;
+      align-items: center;
+
+      .portrait {
+        width: 40px;
+        border-radius: 50%;
+      }
+
+      .info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        margin-left: 15px;
+        width: calc(100% - 85px);
+
+        span {
+          width: 100%;
+        }
+
+        .name {
+          font-weight: 700;
+          color: $very-dark-gray-blue;
+        }
+
+        .date {
+          font-weight: 500;
+          color: $gray-blue;
+        }
+      }
+    }
+
+    .social {
+      width: 100%;
+      height: 70px;
+      padding: 0 35px 0 35px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: $very-dark-gray-blue;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      border-radius: 0 0 10px 10px;
+
+      span {
+        letter-spacing: 5px;
+        color: $gray-blue;
+      }
+
+      .icons {
+        width: calc(100% - 115px);
+        a {
+          padding: 0 5px;
+          position: relative;
+          top: 2px;
+        }
+      }
+
+      img {
+        filter: brightness(100);
+      }
+    }
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 0 20px;
+
+  a {
+    color: hsl(228, 45%, 44%);
+  }
+}
+
+// Small phones
+@media screen and (max-width: 350px) {
+  .card {
+    .content {
+      padding: 25px 25px 25px 25px;
+    }
+
+    .foot-box {
+      padding: 10px 25px 15px 25px;
+
+      .social .icons {
+        width: auto;
+        margin-right: 5px;
+
+        a {
+          padding: 0 3px;
+
+          img {
+            width: 15px;
+          }
+        }
+      }
+    }
+  }
+
+  .btn-share-dark {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+// Phones landscape
+@media screen and (orientation: landscape) and (max-width: 850px) {
+  body .card {
+    margin-top: 70px;
+  }
+}
+
+// Tablets
+@media screen and (min-width: 600px) {
+  .card {
+    max-width: 350px;
+    margin-top: calc((100vh - 508px) / 2);
+  }
+}
+
+// Desktop
+@media screen and (min-width: 1200px) {
+  .card {
+    max-width: 800px;
+    display: flex;
+    margin-top: calc((100vh - 287px) / 2);
+
+    .wrapper {
+      width: 500px;
+    }
+
+    .bg-image {
+      width: 300px;
+      height: 287px;
+      background: url("../images/drawers.jpg") no-repeat top left 0px / cover;
+      border-radius: 10px 0 0 10px;
+    }
+
+    .content {
+      padding-bottom: 20px;
+
+      h2 {
+        font-size: 24px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+    }
+
+    .foot-box .social {
+      width: 250px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: absolute;
+      bottom: 87px;
+      right: -67px;
+      left: auto;
+      border-radius: 10px;
+
+      .btn-share-dark {
+        position: absolute;
+        bottom: -62px;
+        left: 118px;
+      }
+
+      .icons {
+        width: 200px;
+        margin-left: 10px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        a {
+          padding: 0 10px;
+          scale: 0.8;
+        }
+      }
+
+      img {
+        filter: brightness(100);
+      }
+    }
+
+    .social::after {
+      content: "";
+      width: 0;
+      height: 0;
+      position: absolute;
+      bottom: -16px;
+      left: 50%;
+      border-top: 8px solid $very-dark-gray-blue;
+      border-right: 8px solid transparent;
+      border-left: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+      z-index: 1;
+    }
+  }
+}
